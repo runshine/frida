@@ -984,7 +984,7 @@ jobs:
         arch: [x86, x86_64, x86_64-musl, armhf, armel, armhf-musl, armbe8, arm64, arm64be, arm64-musl, mips, mipsel, mips64, mips64el]
       fail-fast: false
     runs-on: ubuntu-latest
-    container: ghcr.io/frida/x-tools-linux-${{ matrix.arch }}:latest
+    container: ghcr.io/runshine/x-tools-linux-${{ matrix.arch }}:latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -1715,7 +1715,7 @@ jobs:
         arch: [x86, x86_64, x86_64-musl, armhf, armel, armhf-musl, armbe8, arm64, arm64be, arm64beilp32, arm64-musl]
       fail-fast: false
     runs-on: ubuntu-latest
-    container: ghcr.io/frida/x-tools-linux-${{ matrix.arch }}:latest
+    container: ghcr.io/runshine/x-tools-linux-${{ matrix.arch }}:latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -1763,7 +1763,7 @@ jobs:
         arch: [x86, arm]
       fail-fast: false
     runs-on: ubuntu-latest
-    container: ghcr.io/frida/x-tools-linux-x86:latest
+    container: ghcr.io/runshine/x-tools-linux-x86:latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -1792,7 +1792,7 @@ jobs:
         arch: [x86_64, arm64]
       fail-fast: false
     runs-on: ubuntu-latest
-    container: ghcr.io/frida/x-tools-linux-x86_64:latest
+    container: ghcr.io/runshine/x-tools-linux-x86_64:latest
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
