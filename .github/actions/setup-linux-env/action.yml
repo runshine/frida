@@ -1,12 +1,12 @@
 name: Set up Linux environment
 description: Set up everything needed to build and release things on Linux
-# inputs:
-#   aws-access-key-id:
-#     required: true
-#     description: The aws-access-key-id used to authenticate with AWS
-#   aws-secret-access-key:
-#     required: true
-#     description: The aws-secret-access-key used to authenticate with AWS
+inputs:
+  aws-access-key-id:
+    required: true
+    description: The aws-access-key-id used to authenticate with AWS
+  aws-secret-access-key:
+    required: true
+    description: The aws-secret-access-key used to authenticate with AWS
 #   cloudflare-email:
 #     required: true
 #     description: The email used to authenticate with Cloudflare
@@ -35,12 +35,12 @@ runs:
           echo "FRIDA_VERSION=$(releng/frida_version.py)"
         ) >> $GITHUB_ENV
       shell: bash
-    # - name: Configure AWS credentials
-    #   uses: aws-actions/configure-aws-credentials@v4
-    #   with:
-    #     aws-access-key-id: ${{ inputs.aws-access-key-id }}
-    #     aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
-    #     aws-region: us-east-1
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ inputs.aws-access-key-id }}
+        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
+        aws-region: us-east-1
     # - name: Configure Cloudflare credentials
     #   run: |
     #     (
