@@ -35,12 +35,12 @@ runs:
           echo "FRIDA_VERSION=$(releng/frida_version.py)"
         ) >> $GITHUB_ENV
       shell: bash
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v4
-      with:
-        aws-access-key-id: ${{ inputs.aws-access-key-id }}
-        aws-secret-access-key: ${{ inputs.aws-secret-access-key }}
-        aws-region: us-east-1
+    - name: Configure S3 credentials
+      run: |
+        wget https://dl.min.io/client/mc/release/linux-amd64/mc
+        chmod +x mc
+        ./mc config host add minio https://s3.runshine.819819  ${{ inputs.aws-access-key-id }} ${{ inputs.aws-secret-access-key }} --api s3v4
+        ./mc config host list
     # - name: Configure Cloudflare credentials
     #   run: |
     #     (
