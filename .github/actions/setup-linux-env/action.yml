@@ -39,7 +39,7 @@ runs:
       run: |
         curl -o mc https://dl.min.io/client/mc/release/linux-amd64/mc
         chmod +x mc
-        ./mc alias  set myminio https://s3.runshine.819819  ${{ inputs.aws-access-key-id }} ${{ inputs.aws-secret-access-key }} 
+        ./mc alias  set myminio https://s3.819819.xyz  ${{ inputs.aws-access-key-id }} ${{ inputs.aws-secret-access-key }} 
         ./mc admin info myminio
       shell: bash
     # - name: Configure Cloudflare credentials
