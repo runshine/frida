@@ -1712,7 +1712,7 @@ jobs:
   toolchain-linux:
     strategy:
       matrix:
-        arch: [x86, x86_64, x86_64-musl, armhf, armel, armhf-musl, armbe8, arm64, arm64be, arm64beilp32, arm64-musl]
+        arch: [x86, x86_64, x86_64-musl, armhf, armel,  armhf-musl, armbe8, arm64, arm64be, arm64beilp32, arm64-musl]
       fail-fast: false
     runs-on: ubuntu-latest
     container: ghcr.io/runshine/x-tools-linux-${{ matrix.arch }}:latest
